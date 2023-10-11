@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myHeader">Hello World!</h1>
+    <button onclick="changeText()">Change text</button><br>
+
+    <iframe src="list\navigation_menu_using_list.html" title="iframe example" frameborder="1"></iframe>
+
+    <script>
+        function changeText() {
+            if (document.getElementById("myHeader").innerHTML == "Hello World!"){
+                document.getElementById("myHeader").innerHTML = "Have a nice day!";
+            } else {
+                document.getElementById("myHeader").innerHTML = "Hello World!";
+            }
+        }
+    </script>
+</body>
+</html>

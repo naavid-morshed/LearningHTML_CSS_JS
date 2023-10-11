@@ -46,7 +46,13 @@ HTML:
         22. <table></table> [for html table refer to table/htmltable.html, for bs5 table reder to LearningBootstrap repo]
         23. for list tags check list folder, for bs5 list check LearningBootstrap
             [style="list-style-type:disc;"] [instead of disc, can use circle, square, none] [can put them in ext CSS]
-        24. 
+        24. <ol type="1"> [types are marker type, other types are A, a, I, i]
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ol> [ol or ul can be nested]
+        25. <iframe src="navigation_menu_using_list.html" title="iframe example" frameborder="1"></iframe>
+                [refrain from using iframe willy nilly, for security purpose]
 
     notes on attributes and misc:
         [
@@ -71,33 +77,36 @@ HTML:
 CSS:
     properties:
         1. a:link {
-                color: black;
-                text-decoration: underline;
-            } [link will be of black color]
+            color: black;
+            text-decoration: underline;
+           } [link will be of black color]
 
-        2.   a:hover {
-                color: red;
-                text-decoration: none;
-            } [hovering over link will paint it red and can change decoration if specified]
+        2. a:hover {
+            color: red;
+            text-decoration: none;
+           } [hovering over link will paint it red and can change decoration if specified]
 
-        3.  a:visited {
-                color: teal;
-            } [once link is clicked at least once, link color will turn teal]
+        3. a:visited {
+            color: teal;
+           } [once link is clicked at least once, link color will turn teal]
 
-        4.  a:active {
-                color: aqua;
-            } [clicking on link will momemtarily turn its color to aqua] [multiple css properties can be combined,
+        4. a:active {
+            color: aqua;
+           } [clicking on link will momemtarily turn its color to aqua] [multiple css properties can be combined,
                                                                             eg. a:link, a:visited {}]
         5. p {
             background-image: url('url here'); [both single and double quote works]
             background-repeat: no-repeat; [it will repeat by default]
-            background-size: cover; [covers entire element, elements are content inside a tag]
+            background-size: cover; [covers entire element, elements and tags are the same thing]
             background-attachment: fixed; [to make sure entire element is always covered]
             background-size: 100% 100%; [makes sure image stretches to cover entire element]
            }
+        6. li {
+            float: left; [float lef makes list items horizontal, has to be used with overflow hidden inside ol/ul]
+           } [bad practice most likely, avoid using this. check navigation_menu_using_list.css]
 
     notes:
-        1. External CSS must not contain any html code [use style tag in html file to point to css file]
+        1. External CSS must not contain any html code [use link tag in html file to point to css file]
         2. Example of internal CSS, looks ugly
                 <html>
                 <head>

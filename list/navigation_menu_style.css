@@ -1,0 +1,24 @@
+.list_style {
+  ul {
+    list-style-type: none;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+  }
+  li:hover {
+    background-color: aliceblue;
+  }
+  li a:hover {
+    color: black;
+  }
+}
