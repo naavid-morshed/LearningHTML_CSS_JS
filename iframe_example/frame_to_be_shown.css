@@ -1,0 +1,22 @@
+td,
+th,
+table {
+  border: 1px solid black;
+  border-color: cadetblue;
+  border-spacing: 3px;
+}
+
+tr:hover {
+  background-color: burlywood;
+}
+
+td,
+th {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+table {
+  border-radius: 7px;
+  width: 50%;
+}
