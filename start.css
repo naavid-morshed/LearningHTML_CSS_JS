@@ -1,0 +1,33 @@
+body {
+  background-color: blueviolet;
+}
+
+a:link {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: aqua;
+}
+
+blockquote{
+    background-image: url("https://th.bing.com/th/id/OIP.A51OWLFvOOJgLKT8Lf9NmQHaEo?pid=ImgDet&rs=1");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+
+/* img {
+    height: 100%;
+    width: 80%;
+} */

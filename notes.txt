@@ -1,6 +1,130 @@
 HTML:
+    notes on tags:
+        1. <title></title> [shows in tab]
+        2. <a href="https://www.wikipedia.com">This is a link</a> [hyperlink tag for showing link]
+                <a href="mailto:someone@example.com">Send email</a> 
+                    [mailto: allows user to click link and open in default mail app. it seems to have a predefined color]
+                <a href="html_demo.html#C4">Jump to Chapter 4</a>
+                    [any html tag can have an id and hyperlink tag can use that id to jump to the specified tag]
+        3. <img src=""alt=""> [src is the link, alt is alternate text, alt cannot be fallback image] [gif link works]
+        4. <br> for line break
+        5. <hr> for full width divider, breaks line as well
+        6. <p>does not preserve spaces</p>
+        7. <pre> this   preserves spaces   </pre> [fixed-width font (usually Courier)]
+        8.  <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+            <map name="workmap"> [map tag, super interesting]
+            <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+            <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+            <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+            </map> [interesting concept, copy paste and run this, clicking on individual coordinate will take to 
+                    different links] [did not practice this yet]
+        9. <picture> [resize window to see picture being changed] [2 use case, bandwidth and format support] 
+                     [did not practice this yet]
+           <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+           <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+           <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+           </picture>
+        HTML text formatting:
+            8. <mark>for highlighting</mark> [yellow is default, can be changed in style]
+            9. <b>bold</b>, <strong>Important Text</strong> [there's no difference between strong and bold, 
+                                                             other than schemantics. Strong tag emphasizes on importance]
+            10. <i>italic</i>, <em>emphasis</em> [both are italic, both does the same thing, em for verbal emphasis,
+                                                  i for technical terms, a thought, a name etc]
+            11. <small>smaller text</small>
+            12. <del>striked through text</del>
+            13. <ins>underlined text</ins> [defines text that has been inserted into a document]
+            14. <sub>subscripted</sub> [appears half a character below normal line]
+            15. <sup>superscripted</sup> [appears half a character above normal line]
+
+        16. <blockquote cite="wikipedia.ord">prints text in the middle with some padding</blockquote> 
+                [cite doesn't seem to be necessary and doesn't show in site but it's good practice?]
+        17. <abbr title="for hover effect">dotted underline</abbr>
+        18. <address>type address here</address> [optional tag, another kind of i or em, less bold italic]
+        19. <cite>citation</cite> [optional tag, good for schemantics]
+        20. <bdo dir="rtl">This line will be written from right to left</bdo> [another funky tag]
+        21. <button onclick="document.location='https://www.wikipedia.org'">GoTo</button> [using button as link]
+        22. <table></table> [for html table refer to table/htmltable.html, for bs5 table reder to LearningBootstrap repo]
+        23. for list tags check list folder, for bs5 list check LearningBootstrap
+            [style="list-style-type:disc;"] [instead of disc, can use circle, square, none] [can put them in ext CSS]
+        24. 
+
+    notes on attributes and misc:
+        [
+            1. HTML is not case sensitive, neither tags nor attributes. lowecase is the convention.
+            2. Style attribute is inherent to HTML? Or is it CSS under the hood? [it is inline CSS, it should not be used too much]
+            3. lang="en" inside html tag is for assisting search engines by declaring language of the Web page.
+            4. use title attribute inside tags to for hover text [title doesn't need to be double quoted but do it anyway]
+            5. style="font-family: Arial;font-size: 150%;" [font size can also be larger, large etc.]
+            6. internal CSS is CSS inside html file, external is referred with rel and href attributes inside link tag.
+            7. target attribute is of 5 types (4 defined, 1 custom):
+                a) _blank [opens in new tab or window]
+                b) _self [default, same frame as it was clicked from]
+                c) _parent [opens in parent frame]
+                d) _top [Opens the linked document in the full body of the window]
+                e) framename [opens linked document in named frame]
+            8. style="float:right" [floats images to right or left, tags other than images work?]
+            9. [what does coords attribute do?] [used to make an area clickable as circle, rectangle, ploygon or the entire area]
+            
+
+        ]
 
 CSS:
+    properties:
+        1. a:link {
+                color: black;
+                text-decoration: underline;
+            } [link will be of black color]
+
+        2.   a:hover {
+                color: red;
+                text-decoration: none;
+            } [hovering over link will paint it red and can change decoration if specified]
+
+        3.  a:visited {
+                color: teal;
+            } [once link is clicked at least once, link color will turn teal]
+
+        4.  a:active {
+                color: aqua;
+            } [clicking on link will momemtarily turn its color to aqua] [multiple css properties can be combined,
+                                                                            eg. a:link, a:visited {}]
+        5. p {
+            background-image: url('url here'); [both single and double quote works]
+            background-repeat: no-repeat; [it will repeat by default]
+            background-size: cover; [covers entire element, elements are content inside a tag]
+            background-attachment: fixed; [to make sure entire element is always covered]
+            background-size: 100% 100%; [makes sure image stretches to cover entire element]
+           }
+
+    notes:
+        1. External CSS must not contain any html code [use style tag in html file to point to css file]
+        2. Example of internal CSS, looks ugly
+                <html>
+                <head>
+                    <style>
+                    body {
+                            background-color: powderblue;
+                    }
+                    h1 {
+                            color: blue;
+                    }
+                    p {
+                        color: red;
+                    }
+                    </style>
+                </head>
+                    <body>
+
+                    <h1>This is a heading</h1>
+                    <p>This is a paragraph.</p>
+
+                    </body>
+                </html>
+        3. css can be heavily customized [keep exploring]
+        4. all style attributes (which are also inline CSS) can be written in external CSS file 
+           to reduce clutter in HTML page
+        5. inline CSS overwrites both internal and external CSS [are there exceptions?]
+        6. 
 
 JS:
 

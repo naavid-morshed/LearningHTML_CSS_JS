@@ -1,0 +1,9 @@
+ul {
+    background-color: antiquewhite
+    
+}
+
+/* ul li means li inside ul */
+ul li:hover {
+    color: red;
+}

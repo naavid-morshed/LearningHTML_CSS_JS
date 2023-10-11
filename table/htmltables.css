@@ -1,0 +1,33 @@
+td,th,table {
+  border: 1px solid black;
+  /* border-collapse: collapse; */
+  /* border-collapse: separate; default*/
+  border-color: cadetblue;
+  border-spacing: 3px;
+}
+
+tr:hover {
+    background-color: burlywood;
+}
+
+td,th {
+  padding: 10px;
+  /* background-color: antiquewhite; */
+  border-radius: 10px;
+  /* border-style: dashed; */
+  /* text-align: end; */
+}
+
+/* td:nth-child(odd) {
+  background-color: aqua;
+}
+
+th:nth-child(even) {
+  background-color: blueviolet;
+} */
+
+table {
+  border-radius: 7px;
+  /* border-style: dotted; */
+  width: 50%;
+}
