@@ -1,0 +1,54 @@
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+
+[read input_types.txt and notes_on_forms.txt together]
+
+check for input restriction here: https://www.w3schools.com/html/html_form_input_types.asp
+
+disabled vs readonly attr in input element? [readonly still allows user to input, disabled doesn't]
+
+pattern="[A-Za-z]{5} [max 5 letter, check regex for combos]
+
+placeholder="123-45-678" [disappears as soon as text is being filled]
+
+required attr [use this so that user is forced to make input]
+
+step="3" [defines step, not applicable everywhere]
+
+autofocus [focuses on form when site is reloaded]
+
+formaction [use on input element inside form element, it defines a specific url for handling the input
+            and keeps it independant from parent form element]
+
+<input type="submit" formtarget="_blank" value="Submit to a new window/tab"> [same as target="_blank"]
+
+formmethod [understand this when handling forms with js]
+
+formenctype [
+    (I DID not work with this yet, need to prac js)
+    The input formenctype attribute specifies how the form-data should be encoded when submitted (only for forms with method="post").
+
+    Note: This attribute overrides the enctype attribute of the <form> element.
+
+    The formenctype attribute works with the following input types: submit and image.
+]

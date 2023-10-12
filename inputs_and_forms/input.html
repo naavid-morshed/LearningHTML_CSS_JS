@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form>
+            <fieldset>
+                <legend>Personalia:</legend>
+
+                <input type="radio" name="fav_lang" id="id1" value="value5">
+                <label for="id1">HTML</label><br>
+
+                <input type="radio" name="" id="id2" value="value">
+                <label for="id2">CSS</label><br>
+
+                <input type="radio" name="fav_lang" id="id3" value="value">
+                <label for="id3">JS</label><br>
+
+                <input type="submit" value="submit">
+            </fieldset>
+        </form>
+    </div>
+
+    <div>
+        <form>
+            <label for="cars">Choose a car:</label>
+            <select id="cars" name="cars" size="4" multiple>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select><br><br>
+            <input type="submit">
+        </form>
+    </div>
+
+    <div>
+        <form>
+            <textarea name="message" rows="10" cols="30"></textarea>
+        </form>
+    </div><br>
+
+    <div>
+        <button type="button" onclick="alert('Hello World!')" title="click for a popup">Click Me!</button>
+    </div>
+
+    <div>
+        <form>
+            <input list="browsers" name="browser">
+            <datalist id="browsers">
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+            <input type="submit">
+        </form><br>
+        <form>
+            <input list="browsers" name="browser">
+            <datalist id="browsers">
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+            <input type="reset">
+        </form><br>
+        <form>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+        </form>
+    </div>
+
+    <div>
+        <form action="/action_page.php" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+            0
+            <input type="range" id="a" name="a" value="50">
+            100 +
+            <input type="number" id="b" name="b" value="50">
+            =
+            <output name="x" for="a b"></output>
+            <br><br>
+            <input type="submit">
+        </form>
+    </div><br><br><br>
+
+    <div>
+        <form>
+            <label for="date1">Choose date</label>
+            <input type="date" name="datepicker" id="date1" min="1997-01-01" max="2023-12-31" size="20"><br>
+            <input type="datetime-local"><br>
+        </form>
+    </div><br><br>
+
+    <div>
+        <form action="/action_page.php">
+            <label for="country_code">Country code:</label>
+            <input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{5}"
+                title="Five letter country code"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>

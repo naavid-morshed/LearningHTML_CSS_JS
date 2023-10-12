@@ -1,0 +1,9 @@
+responsive image:
+    1. <img src="img_girl.jpg" style="max-width:100%;height:auto;">
+        [If the max-width property is set to 100%, the image will scale down if it has to, 
+         but never scale up to be larger than its original size]
+    2.  <img src="img_girl.jpg" style="width:100%;">
+        [If the CSS width property is set to 100%, the image will be responsive and scale up and down]
+    3. <h1 style="font-size:10vw">Hello World</h1>
+        [The text size can be set with a "vw" unit, which means the "viewport width".
+         That way the text size will follow the size of the browser window]

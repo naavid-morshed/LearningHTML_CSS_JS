@@ -1,4 +1,5 @@
-HTML:
+HTML:   [ref for metadata: https://www.w3schools.com/html/html_head.asp] [Always Specify alt, width, and height for Images]
+        [how to write special characters like <, >, & etc: https://www.w3schools.com/html/html_entities.asp]
     notes on tags:
         1. <title></title> [shows in tab]
         2. <a href="https://www.wikipedia.com">This is a link</a> [hyperlink tag for showing link]
@@ -24,6 +25,7 @@ HTML:
            <source media="(min-width:465px)" srcset="img_white_flower.jpg">
            <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
            </picture>
+
         HTML text formatting:
             8. <mark>for highlighting</mark> [yellow is default, can be changed in style]
             9. <b>bold</b>, <strong>Important Text</strong> [there's no difference between strong and bold, 
@@ -53,6 +55,10 @@ HTML:
             </ol> [ol or ul can be nested]
         25. <iframe src="navigation_menu_using_list.html" title="iframe example" frameborder="1"></iframe>
                 [refrain from using iframe willy nilly, for security purpose]
+        26. <noscript>Sorry, your browser does not support JavaScript!</noscript>
+            [alternate content to be displayed to users that have disabled scripts in their 
+             browser or have a browser that doesn't support scripts]
+        27. <kbd>ctrl + k</kbd>
 
     notes on attributes and misc:
         [
@@ -70,7 +76,8 @@ HTML:
                 e) framename [opens linked document in named frame]
             8. style="float:right" [floats images to right or left, tags other than images work?]
             9. [what does coords attribute do?] [used to make an area clickable as circle, rectangle, ploygon or the entire area]
-            
+            10. onclick="alert('Hello World!')" [button attribute, alert will show a notification style
+                                                 alert.]
 
         ]
 
@@ -136,4 +143,12 @@ CSS:
         6. 
 
 JS:
+    1.  <script> [demo is referring to element id] [many combinations are possible]
+            document.getElementById("demo").innerHTML = "Hello JavaScript!";
+            document.getElementById("demo").style.fontSize = "25px";
+            document.getElementById("demo").style.color = "red";
+            document.getElementById("demo").style.backgroundColor = "yellow";
+            document.getElementById("image").src = "picture.gif";
+        </script>
+    2.  
 

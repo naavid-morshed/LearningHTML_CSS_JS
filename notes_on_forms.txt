@@ -1,0 +1,45 @@
+  [check examples at inputs_and_forms/input.html]
+  [read input_types.txt and notes_on_forms.txt together]
+  [many kinds of form attributes, check them at https://www.w3schools.com/html/html_form_attributes_form.asp]
+1. if action attribute is omitted, the action is set to the current page
+2. name attributes in input element can be shared.
+     eg. multiple radio inputs having same name will make sure you can select only one.
+3. what does value attribute do?
+4. label can refer to an input via id but having input inside label does not requrie id.
+5. method attributes, eg- GET, POST, 
+6. autocomplete="on" [suggests completion based on users last input]
+7. check list of form attributes from https://www.w3schools.com/html/html_forms_attributes.asp
+8. form can contain below elements:
+     <input>
+     <label>
+     <select>
+     <textarea>
+     <button>
+     <fieldset>
+     <legend>
+     <datalist>
+     <output>
+     <option>
+     <optgroup>
+9. use select element for dropdown, use option element inside. form element tag, size attr allows user 
+     to see multiple options without clicking. multiple attr allows user to select multiple options.
+10. form>fieldset>legend [inside legend type description to wrap around a content]
+11. <form> [use data list for predefined dropdown inside form]
+          <input list="browsers" name="browser">
+          <datalist id="browsers">
+               <option value="Edge">
+               <option value="Firefox">
+               <option value="Chrome">
+               <option value="Opera">
+               <option value="Safari">
+          </datalist>
+          <input type="submit">
+     </form>
+12. <form action="/action_page.php"> [formaction overrides action of form]
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname"><br><br>
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname"><br><br>
+          <input type="submit" value="Submit">
+          <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
+     </form>
