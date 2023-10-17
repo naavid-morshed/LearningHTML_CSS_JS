@@ -6,7 +6,7 @@
      eg. multiple radio inputs having same name will make sure you can select only one.
 3. what does value attribute do?
 4. label can refer to an input via id but having input inside label does not requrie id.
-5. method attributes, eg- GET, POST, 
+5. method attributes, eg- GET, POST,
 6. autocomplete="on" [suggests completion based on users last input]
 7. check list of form attributes from https://www.w3schools.com/html/html_forms_attributes.asp
 8. form can contain below elements:

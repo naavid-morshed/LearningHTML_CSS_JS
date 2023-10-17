@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <h1>
+        <script>
+            // obj1 = {mail:"naavid.m@gmail.com", name:"Naavid Morshed", id:18201196}
+            var obj1 = new Object();
+            obj1.mail = "naavid.m@gmail.com";
+            obj1.name = "Naavid Morshed";
+            obj1.id = 18201196;
+            document.writeln("Employee: " + obj1.mail + " Name: " + obj1.name + " ID: " + obj1.id);
+        </script><br>
+
+        <script>
+            function employee(mail, name, id) {
+                this.mail = mail;
+                this.name = name;
+                this.id = id;
+            }
+            emp1 = new employee("mail@mail.com", "generic name", "18201196");
+            document.write(emp1.mail,"<br>", emp1.name," ",emp1.id);
+        </script>
+    </h1> -->
+
+    <script>
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        document.write("<br>Date is: " + day + "/" + month + "/" + year);  
+    </script>
+
+    <div>
+        <form>
+            <label>enter some text: <input type="text"></label><br>
+            <input type="submit" id="id1" onclick="showAlert(id1.value)" value="submit" name="name">
+
+        </form><br>
+        <button type="submit" onclick="multiplier(3,5)">Submit</button>
+    </div>
+
+    <!-- <script>
+        document.writeln(add(2, 5));
+    </script> -->
+    <script type="text/javascript" src="./test.js"></script>
+</body>
+
+</html>

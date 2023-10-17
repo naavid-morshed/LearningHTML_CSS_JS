@@ -142,13 +142,103 @@ CSS:
         5. inline CSS overwrites both internal and external CSS [are there exceptions?]
         6. 
 
-JS:
+JS: [use "<br>" inside function for line break] 
+    [form handling is done in test_two/modal_with_form.html|js. very important]
+    [documents can be got by name, id, class & tag]
+    [form validation can be done with both html and js, pick your poison]
     1.  <script> [demo is referring to element id] [many combinations are possible]
-            document.getElementById("demo").innerHTML = "Hello JavaScript!";
+            document.getElementById("demo").innerHTML = "Hello JavaScript!"; [use innerText for dynamic text]
             document.getElementById("demo").style.fontSize = "25px";
             document.getElementById("demo").style.color = "red";
             document.getElementById("demo").style.backgroundColor = "yellow";
             document.getElementById("image").src = "picture.gif";
         </script>
-    2.  
-
+    2. <script type="text/javascript"> [type provides information to the browser about the data] 
+                                   [omitting this does not cause issues but should still be written for
+                                    faster loading as browsers cache external js files, check for security issues]
+        document.write("hello world"); [this will write hello world to an html file]
+        alert("Hello java")
+        window.value=100; [declaring global variable by window object]
+   </script>
+    3. Comparison operators:
+        a) == [compares value regardless of data type]
+        b) === [identical operator, compares both value and type]
+        c) != [opposite of a)]
+        d) !== [opposite of b)]
+    4. Bitwise operators [i don't understand all of them, will study as needed]
+        a) &
+        b) |
+        c) ^
+        d) ~
+        e) <<
+        f) >>
+        g) >>>
+    5. Logical operators [these are used more often]
+        a) && [AND] 
+        b) || [OR]
+        c) !  [NOT]
+    6. Assignment operators [common sense, check https://www.javatpoint.com/javascript-operators if needed]
+    7. Special operators [check link for details]
+        a) (?:)
+        b) ,
+        c) delete
+        d) in
+        e) instanceof
+        f) new
+        g) typeof
+        h) void
+        i) yield
+    8. if else [same as java/dart]
+    9. switch(){ [is break needed everytime?] [yes sorta, The switch statement is fall-through i.e. 
+                                               all the cases will be evaluated if you don't use break statement]
+        case val1:
+            execute code;
+            break;
+        case val2:
+            execute code;
+            break;
+        case val3:
+            execute code;
+            break;
+        default:
+            execute code;
+    }
+    10. for, while, dowhile [same as java/dart]
+    11. for in loop [learn this later]
+    12. function multiplier(num, multiply_by){ [basic function]
+            alert(num * multiply_by);
+        }
+    13. var add=new Function("num1","num2","return num1+num2"); [another way of defining a function]
+    14. Objects [important and confusing, check here https://www.javatpoint.com/javascript-objects]
+    15. var arr = [1,2,3]; [read array methods from here https://www.javatpoint.com/javascript-array]
+        var arr = new Array(); 
+            arr[0] = "sad";
+            arr[1] = "sadfff";
+            arr[2] = "gf";
+        var arr = new Array("sad","afds","asf");
+    16. [Strings can be declared like other variables (as literals) or as an object] 
+        [read String methods here https://www.javatpoint.com/javascript-string]
+        [str.charAt(2) and str[2] does the same thing]
+    17. Date object [https://www.javatpoint.com/javascript-date]
+        [basic use, create obj from Date() class, then create vars that can get data from obj via methods]
+    18. math library [https://www.javatpoint.com/javascript-math]
+    19. number object [seems important, parseint/isfloat and 
+                       other important methods are present
+                       https://www.javatpoint.com/javascript-number]
+    20. document.write(10<20); [will write true]
+    21. confirm("are you sure?") [this method depending on user input returns a boolean and 
+                                  can be assigned to a variable. eg. var v = confirm("dfg?")] 
+    22. <script type="text/javascript">  [this can also be done with plain html]
+            function msg(){  
+                open("http://www.javatpoint.com");  [opens this url in new tab]
+            }  
+        </script>
+        <input type="button" value="javatpoint" onclick="msg()"/> 
+    23. setTimeout(function(),2000) [runs function after 2000ms]
+    24. history.back(); //for previous page  [png available in file]
+        history.forward(); //for next page  
+        history.go(2); //for next 2nd page  
+        history.go(-2); //for previous 2nd page 
+    25. JavaScript Navigator Object [check screenshot folder]
+    26. screen.height|width|availWidth|availHeight|colorDepth|pixelDepth [check ss folder]
+    27. 
