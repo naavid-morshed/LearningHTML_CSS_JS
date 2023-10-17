@@ -231,7 +231,7 @@ JS: [use "<br>" inside function for line break]
     22. <script type="text/javascript">  [this can also be done with plain html]
             function msg(){  
                 open("http://www.javatpoint.com");  [opens this url in new tab]
-            }  
+            }
         </script>
         <input type="button" value="javatpoint" onclick="msg()"/> 
     23. setTimeout(function(),2000) [runs function after 2000ms]
