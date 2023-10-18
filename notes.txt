@@ -242,3 +242,6 @@ JS: [use "<br>" inside function for line break]
     25. JavaScript Navigator Object [check screenshot folder]
     26. screen.height|width|availWidth|availHeight|colorDepth|pixelDepth [check ss folder]
     27. var totalpara=document.getElementsByTagName("p"); [counts how many times paragraphs have been inserted]
+    28. Study cookies later
+    29. Study abstract class later [abstract class in js has to be specified within constructor that it is abstract]
+    30. 

@@ -11,13 +11,14 @@
     <script src="./index.js"></script>
     <script>
         const e1 = new Employee(101, "Martin Roy");
-        const e2 = new Employee(102, "Duke William");
+        
         e1.detail(); //calling method
-        e2.detail();
+        // e2.detail();
         document.getElementById("id1").innerHTML = e1.__proto__;
         document.getElementById("id2").innerHTML = Employee.prototype.__proto__;
-        document.getElementById("id3").innerHTML = e1.hasOwnProperty("id");
-        document.getElementById("id4").innerHTML = Employee.hasOwnProperty("name");
+        document.getElementById("id3").innerHTML = e1.hasOwnProperty("age");
+        // document.getElementById("id4").innerHTML = Employee.hasOwnProperty("usrName");
+        document.getElementById("id4").innerHTML = dt.getHours + dt.getMinutes;
     </script>
 </body>
 

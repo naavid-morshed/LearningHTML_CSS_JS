@@ -35,22 +35,27 @@
         var day = date.getDate();
         var month = date.getMonth() + 1;
         var year = date.getFullYear();
-        document.write("<br>Date is: " + day + "/" + month + "/" + year);  
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        document.write("Date is: " + day + "/" + month + "/" + year + "<br>");  
+        document.write(hours + ":" + minutes + ":" + seconds);
+        setInterval(updateTime, 1000);
     </script>
 
-    <div>
+    <!-- <div>
         <form>
             <label>enter some text: <input type="text"></label><br>
             <input type="submit" id="id1" onclick="showAlert(id1.value)" value="submit" name="name">
 
         </form><br>
         <button type="submit" onclick="multiplier(3,5)">Submit</button>
-    </div>
+    </div> -->
 
     <!-- <script>
         document.writeln(add(2, 5));
     </script> -->
-    <script type="text/javascript" src="./test.js"></script>
+    <!-- <script type="text/javascript" src="./test.js"></script> -->
 </body>
 
 </html>
