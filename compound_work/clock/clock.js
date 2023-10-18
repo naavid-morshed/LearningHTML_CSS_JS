@@ -5,5 +5,11 @@ function checkDate() {
 
 function checkTimer() {
   const date = new Date();
-  document.getElementById("id2").innerHTML = date.toLocaleTimeString();
+  const mil = date.getMilliseconds();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  const am_pm = hours > 12 ? " PM" : " AM";
+  document.getElementById("id2").innerHTML = hours + ":" + minutes + ":" + seconds + ":" + mil + am_pm;
+  //   $(".id2").innerHTML = date.toLocaleTimeString()
 }

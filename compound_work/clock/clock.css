@@ -1,12 +1,14 @@
 .customCenterDiv {
+  text-align: center;
   background-color: black;
   color: rgb(214, 5, 5);
-  border-radius: 10px;
+  
   width: 20%;
+  border-radius: 10px;
+  padding: 10px;
+
+  position: absolute;
   top: 50%;
   left: 50%;
-  position: absolute;
-  padding: 10px;
-  text-align: center;
   transform: translate(-50%, -50%);
 }
