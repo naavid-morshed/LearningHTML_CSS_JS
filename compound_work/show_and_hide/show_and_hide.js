@@ -1,6 +1,5 @@
-var flag = true;
-function showOrHide() {
-  var cform = `
+function showOrHide(id) {
+  var showForm = `
     <form action='Comment'>
         Enter Name:<br>
         <input type='text' name='name'/><br/>  
@@ -8,12 +7,10 @@ function showOrHide() {
         Enter Comment:<br/>  
         <textarea></textarea><br><input type='submit' value='Post Comment'/>
     </form>`;
-
-  if (flag) {
-    document.getElementById("mylocation").innerHTML = cform;
-    flag = false;
+// ==   === 
+  if (!document.getElementById(id).innerHTML) {
+    document.getElementById(id).innerHTML = showForm;
   } else {
-    document.getElementById("mylocation").innerHTML = "";
-    flag = true;
+    document.getElementById(id).innerHTML = "";
   }
 }
