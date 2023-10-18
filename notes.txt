@@ -211,7 +211,7 @@ JS: [use "<br>" inside function for line break]
     13. var add=new Function("num1","num2","return num1+num2"); [another way of defining a function]
     14. Objects [important and confusing, check here https://www.javatpoint.com/javascript-objects]
     15. var arr = [1,2,3]; [read array methods from here https://www.javatpoint.com/javascript-array]
-        var arr = new Array(); 
+        var arr = new Array();
             arr[0] = "sad";
             arr[1] = "sadfff";
             arr[2] = "gf";
@@ -241,4 +241,4 @@ JS: [use "<br>" inside function for line break]
         history.go(-2); //for previous 2nd page 
     25. JavaScript Navigator Object [check screenshot folder]
     26. screen.height|width|availWidth|availHeight|colorDepth|pixelDepth [check ss folder]
-    27. 
+    27. var totalpara=document.getElementsByTagName("p"); [counts how many times paragraphs have been inserted]
