@@ -250,4 +250,5 @@ JS: [use "<br>" inside function for line break]
         at interpretation time rather when it is called making it a more secure process at cost of some reusability]
        [multiple events can be added to the same element, fe. one button firing multiple]
        [I do not yet understand event capturing and bubbling yet]
-    31. 
+    31. Promised [JS way of doing async] [at compound_work/dropdown_lsit use promise to make alert work 
+        after other codes before it]

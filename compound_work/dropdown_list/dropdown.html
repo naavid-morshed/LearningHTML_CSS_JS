@@ -7,7 +7,7 @@
 <body>
     <form>
         <b> Select your favourite language </b>
-        <select id="myList" onchange="favTutorial()">
+        <select id="listid" onchange="favLang('listid','inputId')">
             <option> ---Choose Language--- </option>
             <option> Java </option>
             <option> Javascript </option>
@@ -15,7 +15,7 @@
             <option> Lua </option>
             <option> Dart </option>
         </select>
-        <p> Your favourite language is: <input type="text" readonly id="favourite" size="20"> </p>
+        <p>Your favourite language is: <input type="text" readonly id="inputId" size="20"></p>
     </form>
     <script src="./dropdown.js"></script>
 </body>
