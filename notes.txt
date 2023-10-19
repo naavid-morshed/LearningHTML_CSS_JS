@@ -146,6 +146,8 @@ JS: [use "<br>" inside function for line break]
     [form handling is done in test_two/modal_with_form.html|js. very important]
     [documents can be got by name, id, class & tag]
     [form validation can be done with both html and js, pick your poison]
+    [var mybtn = document.getElementById("btn");  shortened version for less code]
+    [Any element can be clickable via- document.getElementById("id").onclick = function();]
     1.  <script> [demo is referring to element id] [many combinations are possible]
             document.getElementById("demo").innerHTML = "Hello JavaScript!"; [use innerText for dynamic text]
             document.getElementById("demo").style.fontSize = "25px";
@@ -244,4 +246,8 @@ JS: [use "<br>" inside function for line break]
     27. var totalpara=document.getElementsByTagName("p"); [counts how many times paragraphs have been inserted]
     28. Study cookies later
     29. Study abstract class later [abstract class in js has to be specified within constructor that it is abstract]
-    30. 
+    30. addEventListener() method [check compound_work/event_listener] [this javascript method does not load 
+        at interpretation time rather when it is called making it a more secure process at cost of some reusability]
+       [multiple events can be added to the same element, fe. one button firing multiple]
+       [I do not yet understand event capturing and bubbling yet]
+    31. 
