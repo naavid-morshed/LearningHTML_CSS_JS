@@ -15,7 +15,7 @@ function numberToEnglish(n, custom_join_character) {
     word,
     words;
 
-  var and = custom_join_character || "and";
+  var and = Number(n) >= 100 ? custom_join_character || "and" : "";
 
   /* Is number zero? */
   if (parseInt(string) === 0) {
@@ -144,13 +144,8 @@ function numberToEnglish(n, custom_join_character) {
       }
     }
   }
+  var finalText = Number(n) >= 0 ? words.reverse().join(" ")
+      : "negative ".concat(words.reverse().join(" "));
 
-  return words.reverse().join(" ");
-}
-
-document.getElementById("numInputId").addEventListener("change", func);
-
-function func() {
-  document.getElementById("paraid").innerHTML = document.getElementById("numInputId").value;
-  document.getElementById("paraid").setAttribute("title",numberToEnglish(document.getElementById("numInputId").value));
+  return finalText;
 }

@@ -142,7 +142,9 @@ CSS:
         5. inline CSS overwrites both internal and external CSS [are there exceptions?]
         6. 
 
-JS: [use "<br>" inside function for line break] 
+JS: [use "<br>" inside function for line break]
+    [js changes value on reassigning of another value, same goes for methods. need to be careful about this]
+    [use typeof() for checking type, type debugger before a line of code for setting breakpoint]
     [form handling is done in test_two/modal_with_form.html|js. very important]
     [documents can be got by name, id, class & tag]
     [form validation can be done with both html and js, pick your poison]
