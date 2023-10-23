@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <form class="ps-2" id="bmiform">
+                <label class="mt-2">Input name: <input class="form-control mb-2" type="text" id="name_id"></label><br>
+                <label>Input age: <input class="form-control mb-2" type="number" id="age_id"></label><br>
+                <label>Input height (in meters): <input class="form-control mb-2" type="number"
+                        id="height_id"></label><br>
+                <label>Input weight (in Kg): <input class="form-control mb-2" type="number" id="weight_id"></label><br>
+            </form>
+        </div>
+        <div class="ps-2 pt-2">
+            <input type="submit" onclick="submitForm('name_id','age_id','height_id','weight_id','bmiform')">
+        </div><br>
+
+        <div class="row m-0">
+            <div class="col-6 ps-2">
+                <table class="m-0 p-0 table table-bordered">
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                        <th>Calculated BMI</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <th id="table_name"></th>
+                        <th id="table_age"></th>
+                        <th id="table_height"></th>
+                        <th id="table_weight"></th>
+                        <th id="table_bmi"></th>
+                        <th>
+                            <input type="button" value="Edit" onclick="edit()">
+                            <input type="button" value="Delete" id="delete_button" onclick="del()">
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="./bmi_old.js"></script>
+</body>
+
+</html>
