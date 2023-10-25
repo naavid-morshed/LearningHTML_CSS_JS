@@ -1,7 +1,7 @@
 var arrayOfClientData = new Array();
 let temp;
 let rowData = "";
-let editingCell = false;
+let isEditing = false;
 
 function submitData() {
   //used regex here, \d inside "\ \"" represents numbers from 0-9
@@ -16,8 +16,8 @@ function submitData() {
     alert("Invalid Height");
   } else if (document.bmi_form.bmi_weight.value == 0) {
     alert("Invalid Weight");
-  } else if (editingCell) {
-    editingCell = false;
+  } else if (isEditing) {
+    isEditing = false;
 
     arrayOfClientData[editingIndex] = {
       name: document.bmi_form.bmi_name.value,
@@ -25,9 +25,7 @@ function submitData() {
       height: document.bmi_form.bmi_height.value,
       weight: document.bmi_form.bmi_weight.value,
       bmi: (document.bmi_form.bmi_weight.value /
-      (document.bmi_form.bmi_height.value *
-          document.bmi_form.bmi_height.value)
-      ).toFixed(2),
+           (document.bmi_form.bmi_height.value *document.bmi_form.bmi_height.value)).toFixed(2),
     };
 
     printData();
@@ -44,29 +42,29 @@ function submitData() {
     };
 
     arrayOfClientData.push(temp);
-    document.getElementById("bmi_table").innerHTML +=
-     `<tr class="table-secondary">
-            <td>${arrayOfClientData[arrayOfClientData.length - 1].name}</td>
-            <td>${arrayOfClientData[arrayOfClientData.length - 1].age}</td>
-            <td>${arrayOfClientData[arrayOfClientData.length - 1].height}</td>
-            <td>${arrayOfClientData[arrayOfClientData.length - 1].weight}</td>
-            <td>${arrayOfClientData[arrayOfClientData.length - 1].bmi}</td>
-            <td>
-                <div class="container-fluid pe-0">
-                    <div class="float-end">
-                        <input class="btn btn-info" type="button" value="Edit" onclick="editPressed('${arrayOfClientData.length - 1}')">
-                        <input class="btn btn-danger" type="button" value="Delete" onclick="del('${arrayOfClientData.length - 1}')">
+    document.getElementById("bmi_table_body").innerHTML +=
+        `<tr class="table-secondary">
+                <td>${arrayOfClientData[arrayOfClientData.length - 1].name}</td>
+                <td>${arrayOfClientData[arrayOfClientData.length - 1].age}</td>
+                <td>${arrayOfClientData[arrayOfClientData.length - 1].height}</td>
+                <td>${arrayOfClientData[arrayOfClientData.length - 1].weight}</td>
+                <td>${arrayOfClientData[arrayOfClientData.length - 1].bmi}</td>
+                <td>
+                    <div class="container-fluid pe-0">
+                        <div class="float-end">
+                            <input class="btn btn-info" type="button" value="Edit" onclick="editPressed('${arrayOfClientData.length - 1}')">
+                            <input class="btn btn-danger" type="button" value="Delete" onclick="del('${arrayOfClientData.length - 1}')">
+                        </div>
                     </div>
-                </div>
-            </td>
-      </tr>`;
+                </td>
+         </tr>`;
     document.bmi_form.reset();
   }
 }
 
 function editPressed(index) {
-  editingCell = true;
-  editingIndex = index; // used this on top
+  isEditing = true;
+  editingIndex = index;
 
   document.bmi_form.bmi_name.value = arrayOfClientData[index].name;
   document.bmi_form.bmi_age.value = arrayOfClientData[index].age;
@@ -96,8 +94,9 @@ function printData() {
                             </div>
                         </div>
                     </td>
-               </tr>`;
+                </tr>`;
   }
-  document.getElementById("bmi_table").innerHTML = rowData;
+
+  document.getElementById("bmi_table_body").innerHTML = rowData;
 }
 
