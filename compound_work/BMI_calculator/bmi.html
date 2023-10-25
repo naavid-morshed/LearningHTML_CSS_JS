@@ -39,7 +39,7 @@
         <div class="row my-3">
             <div class="col-12">
                 <div class="float-end">
-                    <input class="btn btn-secondary" type="submit" value="submit" onclick="submitData('nid','aid','hid','wid','bid')">
+                    <input class="btn btn-secondary" type="submit" value="submit" onclick="submitData()">
                 </div>
             </div>
         </div>
@@ -56,23 +56,7 @@
                         <th>Action: </th>
                     </tr>
                 </thead>
-                <tbody id="bmi_table">
-                    <tr class="table-secondary">
-                        <td id="nid"></td>
-                        <td id="aid"></td>
-                        <td id="hid"></td>
-                        <td id="wid"></td>
-                        <td id="bid"></td>
-                        <td>
-                            <div class="container-fluid pe-0">
-                                <div class="float-end">
-                                    <input class="btn btn-info" type="button" value="Edit" onclick="editPressed()">
-                                    <input class="btn btn-danger" type="button" value="Delete" onclick="del()">
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="bmi_table"></tbody>
             </table>
         </div>
     </div>

@@ -1,9 +1,14 @@
 var arrayOfClientData = new Array();
+let temp;
+let rowData = "";
+let editingCell = false;
 
-function submitData(nid, aid, hid, wid, bid) {
-
+function submitData() {
   //used regex here, \d inside "\ \"" represents numbers from 0-9
-  if (document.bmi_form.bmi_name.value == "" || /\d/.test(document.bmi_form.bmi_name.value)) {
+  if (
+    document.bmi_form.bmi_name.value == "" ||
+    /\d/.test(document.bmi_form.bmi_name.value)
+  ) {
     alert("Invalid Name");
   } else if (document.bmi_form.bmi_age.value == 0) {
     alert("Invalid Age");
@@ -11,38 +16,88 @@ function submitData(nid, aid, hid, wid, bid) {
     alert("Invalid Height");
   } else if (document.bmi_form.bmi_weight.value == 0) {
     alert("Invalid Weight");
+  } else if (editingCell) {
+    editingCell = false;
+
+    arrayOfClientData[editingIndex] = {
+      name: document.bmi_form.bmi_name.value,
+      age: document.bmi_form.bmi_age.value,
+      height: document.bmi_form.bmi_height.value,
+      weight: document.bmi_form.bmi_weight.value,
+      bmi: (document.bmi_form.bmi_weight.value /
+      (document.bmi_form.bmi_height.value *
+          document.bmi_form.bmi_height.value)
+      ).toFixed(2),
+    };
+
+    printData();
+    document.bmi_form.reset();
   } else {
 
-    arrayOfClientData.push({
-        name: document.bmi_form.bmi_name.value,
-        age: document.bmi_form.bmi_age.value,
-        height: document.bmi_form.bmi_height.value,
-        weight: document.bmi_form.bmi_weight.value,
-        bmi: (document.bmi_form.bmi_weight.value/
-             (document.bmi_form.bmi_height.value * document.bmi_form.bmi_height.value)).toFixed(2),
-    });
+    temp = {
+      name: document.bmi_form.bmi_name.value,
+      age: document.bmi_form.bmi_age.value,
+      height: document.bmi_form.bmi_height.value,
+      weight: document.bmi_form.bmi_weight.value,
+      bmi: (document.bmi_form.bmi_weight.value /
+           (document.bmi_form.bmi_height.value *document.bmi_form.bmi_height.value)).toFixed(2),
+    };
 
-    document.getElementById(nid).innerHTML = arrayOfClientData[arrayOfClientData.length - 1].name;
-    document.getElementById(aid).innerHTML = arrayOfClientData[arrayOfClientData.length - 1].age;
-    document.getElementById(hid).innerHTML = arrayOfClientData[arrayOfClientData.length - 1].height;
-    document.getElementById(wid).innerHTML = arrayOfClientData[arrayOfClientData.length - 1].weight;
-    document.getElementById(bid).innerHTML = arrayOfClientData[arrayOfClientData.length - 1].bmi;
-
+    arrayOfClientData.push(temp);
+    document.getElementById("bmi_table").innerHTML +=
+     `<tr class="table-secondary">
+            <td>${arrayOfClientData[arrayOfClientData.length - 1].name}</td>
+            <td>${arrayOfClientData[arrayOfClientData.length - 1].age}</td>
+            <td>${arrayOfClientData[arrayOfClientData.length - 1].height}</td>
+            <td>${arrayOfClientData[arrayOfClientData.length - 1].weight}</td>
+            <td>${arrayOfClientData[arrayOfClientData.length - 1].bmi}</td>
+            <td>
+                <div class="container-fluid pe-0">
+                    <div class="float-end">
+                        <input class="btn btn-info" type="button" value="Edit" onclick="editPressed('${arrayOfClientData.length - 1}')">
+                        <input class="btn btn-danger" type="button" value="Delete" onclick="del('${arrayOfClientData.length - 1}')">
+                    </div>
+                </div>
+            </td>
+      </tr>`;
     document.bmi_form.reset();
   }
 }
 
-function editPressed(){
-    document.bmi_form.bmi_name.value = arrayOfClientData[arrayOfClientData.length - 1].name;
-    document.bmi_form.bmi_age.value = arrayOfClientData[arrayOfClientData.length - 1].age;
-    document.bmi_form.bmi_height.value = arrayOfClientData[arrayOfClientData.length - 1].height;
-    document.bmi_form.bmi_weight.value = arrayOfClientData[arrayOfClientData.length - 1].weight;
+function editPressed(index) {
+  editingCell = true;
+  editingIndex = index; // used this on top
+
+  document.bmi_form.bmi_name.value = arrayOfClientData[index].name;
+  document.bmi_form.bmi_age.value = arrayOfClientData[index].age;
+  document.bmi_form.bmi_height.value = arrayOfClientData[index].height;
+  document.bmi_form.bmi_weight.value = arrayOfClientData[index].weight;
 }
 
-function del(){
-    document.getElementById("nid").innerHTML = "";
-    document.getElementById("aid").innerHTML = "";
-    document.getElementById("hid").innerHTML = "";
-    document.getElementById("wid").innerHTML = "";
-    document.getElementById("bid").innerHTML = "";
+function del(index) {
+  arrayOfClientData.splice(index, 1);
+  printData();
 }
+
+function printData() {
+  rowData = "";
+  for (var count = 0; count < arrayOfClientData.length; count++) {
+    rowData += `<tr class="table-secondary">
+                    <td>${arrayOfClientData[count].name}</td>
+                    <td>${arrayOfClientData[count].age}</td>
+                    <td>${arrayOfClientData[count].height}</td>
+                    <td>${arrayOfClientData[count].weight}</td>
+                    <td>${arrayOfClientData[count].bmi}</td>
+                    <td>
+                        <div class="container-fluid pe-0">
+                            <div class="float-end">
+                                <input class="btn btn-info" type="button" value="Edit" onclick="editPressed('${count}')">
+                                <input class="btn btn-danger" type="button" value="Delete" onclick="del('${count}')">
+                            </div>
+                        </div>
+                    </td>
+               </tr>`;
+  }
+  document.getElementById("bmi_table").innerHTML = rowData;
+}
+
