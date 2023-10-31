@@ -1,4 +1,4 @@
-var arrayOfClientData = new Array();
+const arrayOfClientData = [];
 let temp;
 let rowData = "";
 let isEditing = false;
@@ -6,15 +6,15 @@ let isEditing = false;
 function submitData() {
   //used regex here, \d inside "\ \"" represents numbers from 0-9
   if (
-    document.bmi_form.bmi_name.value == "" ||
+    document.bmi_form.bmi_name.value === "" ||
     /\d/.test(document.bmi_form.bmi_name.value)
   ) {
     alert("Invalid Name");
-  } else if (document.bmi_form.bmi_age.value == 0) {
+  } else if (document.bmi_form.bmi_age.value === 0) {
     alert("Invalid Age");
-  } else if (document.bmi_form.bmi_height.value == 0) {
+  } else if (document.bmi_form.bmi_height.value === 0) {
     alert("Invalid Height");
-  } else if (document.bmi_form.bmi_weight.value == 0) {
+  } else if (document.bmi_form.bmi_weight.value === 0) {
     alert("Invalid Weight");
   } else if (isEditing) {
     isEditing = false;
@@ -25,7 +25,7 @@ function submitData() {
       height: document.bmi_form.bmi_height.value,
       weight: document.bmi_form.bmi_weight.value,
       bmi: (document.bmi_form.bmi_weight.value /
-           (document.bmi_form.bmi_height.value *document.bmi_form.bmi_height.value)).toFixed(2),
+           (document.bmi_form.bmi_height.value * document.bmi_form.bmi_height.value)).toFixed(2),
     };
 
     printData();
