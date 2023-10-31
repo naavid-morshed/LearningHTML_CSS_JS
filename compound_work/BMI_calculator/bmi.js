@@ -1,7 +1,8 @@
 const arrayOfClientData = [];
-let temp;
+let temp; //used to store then push new form data to array
 let rowData = "";
 let isEditing = false;
+let editingIndex = 0; //used to capture editing index when pressed edit
 
 function submitData() {
   //used regex here, \d inside "\ \"" represents numbers from 0-9
@@ -79,7 +80,7 @@ function del(index) {
 
 function printData() {
   rowData = "";
-  for (var count = 0; count < arrayOfClientData.length; count++) {
+  for (let count = 0; count < arrayOfClientData.length; count++) {
     rowData += `<tr class="table-secondary">
                     <td>${arrayOfClientData[count].name}</td>
                     <td>${arrayOfClientData[count].age}</td>
@@ -99,4 +100,3 @@ function printData() {
 
   document.getElementById("bmi_table_body").innerHTML = rowData;
 }
-
