@@ -10,57 +10,99 @@
 </head>
 
 <body class="p-0">
-    <div class="container-fluid pt-2">
-        <form name="bmi_form">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 pe-0">
-                    <div class="row mb-2">
-                        <div class="col-1">Name: </div>
-                        <div class="col-11"><input class="form-control" type="text" name="bmi_name"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1">Age: </div>
-                        <div class="col-11"><input class="form-control" type="number" name="bmi_age" min="1"></div>
+<div class="container-fluid pt-2">
+    <form name="bmi_form">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 pe-0">
+                <div class="row mb-2">
+                    <div class="col-2 pt-2">Name:</div>
+                    <div class="col-10"><input class="form-control" name="bmi_name" placeholder="name" type="text">
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 ps-1">
-                    <div class="row mb-2">
-                        <div class="col-1">Height: </div>
-                        <div class="col-11"><input class="form-control" type="number" name="bmi_height" min="0" step=".01"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1">Weight: </div>
-                        <div class="col-11"><input class="form-control" type="number" name="bmi_weight" min="0" step=".01"></div>
-                    </div>
+                <div class="row">
+                    <div class="col-2 pt-2">Age:</div>
+                    <div class="col-10"><input class="form-control" min="1" name="bmi_age" placeholder="age" type="number"></div>
                 </div>
             </div>
-        </form>
-
-        <div class="row my-3">
-            <div class="col-12">
-                <div class="float-end">
-                    <input class="btn btn-secondary" type="submit" value="submit" onclick="submitData()">
+            <div class="col-lg-6 col-md-6 col-sm-12 ps-1">
+                <div class="row mb-2">
+                    <div class="col-2 pt-2">Height:</div>
+                    <div class="col-10"><input class="form-control" min="0" name="bmi_height" placeholder="height" step=".01" type="number"></div>
+                </div>
+                <div class="row">
+                    <div class="col-2 pt-2">Weight:</div>
+                    <div class="col-10"><input class="form-control" min="0" name="bmi_weight" placeholder="weight" step=".01" type="number"></div>
                 </div>
             </div>
         </div>
+    </form>
 
-        <div class="table-responsive-md table-responsive-sm">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Age (years)</th>
-                        <th>Height (meters)</th>
-                        <th>Weight (Kg)</th>
-                        <th>BMI Total</th>
-                        <th>Action: </th>
-                    </tr>
-                </thead>
-                <tbody id="bmi_table_body"></tbody>
-            </table>
+    <div class="row my-3">
+        <div class="col-6">
+            <input type="radio" name="toggle" id="bmi_mode" checked> BMI Mode
+            <input class="ms-1" type="radio" name="toggle" id="calc_mode"> Calculator Mode
+        </div>
+        <div class="col-6">
+            <div class="float-end">
+                <input class="btn btn-secondary" type="submit" value="submit" onclick="submitData()">
+            </div>
         </div>
     </div>
-    <script src="./bmi.js"></script>
+
+    <div class="table-responsive-md table-responsive-sm" id="radio_table">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age (years)</th>
+                <th>Height (meters)</th>
+                <th>Weight (Kg)</th>
+                <th>BMI Total</th>
+                <th>Action:</th>
+            </tr>
+            </thead>
+            <tbody id="bmi_table_body"></tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <form style="display:none;" id="radio_calc">
+            <div class="mb-1">
+                <input style="width: 174px" class="form-control text-end" type="text" name="display" placeholder="CASEO 420" readonly>
+            </div>
+            <div class="mb-1">
+                <input style="width: 40px" type="button" value="C" onclick="display.value = '' ">
+                <input style="width: 40px" type="button" value="Del" onclick="display.value =  display.value.toString().slice(0,-1)">
+                <input style="width: 40px" type="button" value="." onclick="display.value += '.' " class="operator">
+                <input style="width: 40px" type="button" value="/" onclick="display.value += '/' " class="operator">
+            </div>
+            <div class="mb-1">
+                <input style="width: 40px" type="button" value="7" onclick="display.value += '7' ">
+                <input style="width: 40px" type="button" value="8" onclick="display.value += '8' ">
+                <input style="width: 40px" type="button" value="9" onclick="display.value += '9' ">
+                <input style="width: 40px" type="button" value="X" onclick="display.value += '*' ">
+            </div>
+            <div class="mb-1">
+                <input style="width: 40px" type="button" value="4" onclick="display.value += '4' ">
+                <input style="width: 40px" type="button" value="5" onclick="display.value += '5' ">
+                <input style="width: 40px" type="button" value="6" onclick="display.value += '6' ">
+                <input style="width: 40px" type="button" value="-" onclick="display.value += '-' ">
+            </div>
+            <div class="mb-1">
+                <input style="width: 40px" type="button" value="1" onclick="display.value += '1' ">
+                <input style="width: 40px" type="button" value="2" onclick="display.value += '2' ">
+                <input style="width: 40px" type="button" value="3" onclick="display.value += '3' ">
+                <input style="width: 40px" type="button" value="+" onclick="display.value += '+' ">
+            </div>
+            <div class="mb-1">
+                <input style="width: 40px" type="button" value="%" onclick="display.value += '%' ">
+                <input style="width: 40px" type="button" value="0" onclick="display.value += '0' ">
+                <input style="width: 85px" type="button" value="=" onclick="display.value = eval(display.value)">
+            </div>
+        </form>
+    </div>
+</div>
+<script src="./bmi.js"></script>
 </body>
 
 </html>

@@ -100,3 +100,17 @@ function printData() {
 
   document.getElementById("bmi_table_body").innerHTML = rowData;
 }
+
+document.getElementById("bmi_mode").addEventListener("change", function () {
+  if (this.checked) {
+    document.getElementById("radio_table").style.display = "block";
+    document.getElementById("radio_calc").style.display = "none";
+  }
+});
+
+document.getElementById("calc_mode").addEventListener("change", function () {
+  if (this.checked) {
+    document.getElementById("radio_table").style.display = "none";
+    document.getElementById("radio_calc").style.display = "block";
+  }
+});
