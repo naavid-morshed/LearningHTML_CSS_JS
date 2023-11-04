@@ -73,8 +73,14 @@
             <div class="mb-1">
                 <input style="width: 40px" type="button" value="C" onclick="display.value = '' ">
                 <input style="width: 40px" type="button" value="Del" onclick="display.value =  display.value.toString().slice(0,-1)">
-                <input style="width: 40px" type="button" value="." onclick="display.value += '.' " class="operator">
-                <input style="width: 40px" type="button" value="/" onclick="display.value += '/' " class="operator">
+                <input style="width: 40px" type="button" value="." onclick="display.value += '.' ">
+                <input style="width: 40px" type="button" value="/" onclick="display.value += '/' ">
+            </div>
+            <div class="mb-1">
+                <input style="width: 40px" type="button" value="(" onclick="display.value += '(' ">
+                <input style="width: 40px" type="button" value=")" onclick="display.value += ')' ">
+                <input style="width: 40px" type="button" value="^" onclick="display.value += '**' ">
+                <input style="width: 40px" type="button" value="%" onclick="display.value += '%' ">
             </div>
             <div class="mb-1">
                 <input style="width: 40px" type="button" value="7" onclick="display.value += '7' ">
@@ -95,13 +101,14 @@
                 <input style="width: 40px" type="button" value="+" onclick="display.value += '+' ">
             </div>
             <div class="mb-1">
-                <input style="width: 40px" type="button" value="%" onclick="display.value += '%' ">
+                <input style="width: 40px" type="button" value="00" onclick="display.value += '00' ">
                 <input style="width: 40px" type="button" value="0" onclick="display.value += '0' ">
-                <input style="width: 85px" type="button" value="=" onclick="display.value = eval(display.value)">
+                <input style="width: 85px" type="button" value="=" onclick="display.value = eval(display.value).toFixed(12)">
             </div>
         </form>
     </div>
 </div>
+
 <script src="./bmi.js"></script>
 </body>
 
