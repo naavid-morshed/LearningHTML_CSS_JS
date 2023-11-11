@@ -114,3 +114,51 @@ document.getElementById("calc_mode").addEventListener("change", function () {
     document.getElementById("radio_calc").style.display = "block";
   }
 });
+
+
+function clearDisplay() {
+  document.getElementById('display').value = '';
+}
+
+function deleteLastCharacter() {
+  const currentDisplay = document.getElementById('display').value;
+  document.getElementById('display').value = currentDisplay.slice(0, -1);
+}
+
+function appendDot() {
+  const currentDisplay = document.getElementById('display').value;
+  const lastNumber = getLastNumber(currentDisplay);
+  if (!lastNumber.includes('.')) {
+    document.getElementById('display').value += '.';
+  }
+}
+
+function appendToDisplay(value) {
+  const display = document.getElementById('display');
+
+  display.value = display.value.replace(/Math error/g, '');
+  display.value = display.value.replace(/undefined/g, '');
+
+  display.value += value;
+}
+
+function calculate() {
+    const display = document.getElementById('display');
+    const currentDisplay = display.value;
+    const openParenthesesCount = (currentDisplay.match(/\(/g) || []).length;
+    const closeParenthesesCount = (currentDisplay.match(/\)/g) || []).length;
+
+    const missingParentheses = openParenthesesCount - closeParenthesesCount;
+    const completeExpression = currentDisplay + ')'.repeat(missingParentheses);
+
+    try {
+        display.value = eval(completeExpression);
+    } catch (error) {
+        display.value = 'Math error';
+    }
+}
+
+function getLastNumber(str) {
+  const match = str.match(/[\d.]+$/);
+  return match ? match[0] : '';
+}
