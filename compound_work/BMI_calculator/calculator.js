@@ -55,6 +55,8 @@ function calculate() {
     // Replace ^ with **
     display.value = display.value.replace(/\^/g, '**');
 
+    display.value = display.value.replace(/\X/g, '*');
+
     try {
         display.value = eval(display.value);
         calculationDone = display.value === "0";
