@@ -39,6 +39,7 @@ function appendDot() {
 function calculate() {
     const display = document.getElementById('display');
 
+    // Replace -digit as -1 * digit, otherwise some ^ operation fails
     display.value = display.value.replace(/(-)(\d+(\.\d+)?)/g, '-1*$2');
 
     const openParenthesesCount = (display.value.match(/\(/g) || []).length;
@@ -55,7 +56,11 @@ function calculate() {
     // Replace ^ with **
     display.value = display.value.replace(/\^/g, '**');
 
+    // Replace X with *
     display.value = display.value.replace(/\X/g, '*');
+
+    // Replace empty dot/(.) with 0
+    display.value = display.value.replace(/\./g, '0');
 
     try {
         display.value = eval(display.value);
