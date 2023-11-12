@@ -59,14 +59,13 @@ function calculate() {
     // Replace X with *
     display.value = display.value.replace(/\X/g, '*');
 
-    // Replace empty dot/(.) with 0
-    display.value = display.value.replace(/\./g, '0');
+    // Replace empty dot with 0
+    display.value = display.value.replace(/\.(?!\d)/g, ".0");
 
     try {
         display.value = eval(display.value);
-        calculationDone = display.value === "0";
     } catch (error) {
-        display.value = 'Math error';
+        display.value = error.toString();
         calculationDone = true;
     }
 }
