@@ -101,12 +101,14 @@ function printData() {
   document.getElementById("bmi_table_body").innerHTML = rowData;
 }
 
-document.getElementById("bmi_mode").addEventListener("change", function () {
+document.getElementById("bmi_mode").addEventListener("change", func1);
+
+function func1 () {
   if (this.checked) {
     document.getElementById("radio_table").style.display = "block";
     document.getElementById("radio_calc").style.display = "none";
   }
-});
+}
 
 document.getElementById("calc_mode").addEventListener("change", function () {
   if (this.checked) {
