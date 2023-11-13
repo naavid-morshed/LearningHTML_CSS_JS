@@ -25,6 +25,8 @@ function appendToDisplay(value) {
 
     display.value += value;
 
+    // leading 0 causes eval() to count value as octal, will replace leading 0 with ""
+    // unless .X/+-%^() found right after
     if (zeroResultFound){
         zeroResultFound = false;
         display.value = display.value.replace(/^0+(?![.\/()+%^X-])/g, '0');
@@ -45,7 +47,7 @@ function appendDot() {
 function calculate() {
     const display = document.getElementById('display');
 
-    // remove all leading 0s unless "." found after 0s
+    // remove all leading 0s unless "./+-%^X()" found after 0s
     if (display.value.length >= 1){
         display.value = display.value.replace(/^0+(?![.\/()+%^X-])/g, '');
     }
