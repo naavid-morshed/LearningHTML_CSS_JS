@@ -1,19 +1,20 @@
-let calculationDone = false;
+let errorFound = false;
+let zeroResultFound = false;
 
 function clearDisplay() {
     document.getElementById('display').value = '';
 }
 
 function deleteLastCharacter() {
-    const currentDisplay = document.getElementById('display').value;
-    document.getElementById('display').value = currentDisplay.slice(0, -1);
+    const display = document.getElementById('display');
+    display.value = display.value.slice(0, -1);
 }
 
 function appendToDisplay(value) {
     const display = document.getElementById('display');
 
-    if (calculationDone) {
-        calculationDone = false;
+    if (errorFound) {
+        errorFound = false;
         display.value = "";
     }
 
@@ -23,6 +24,11 @@ function appendToDisplay(value) {
     display.value = display.value.replace(/NaN/g, '');
 
     display.value += value;
+
+    if (zeroResultFound){
+        zeroResultFound = false;
+        display.value = display.value.replace(/^0+(?![.\/()+%^X-])/g, '0');
+    }
 }
 
 function appendDot() {
@@ -38,6 +44,11 @@ function appendDot() {
 
 function calculate() {
     const display = document.getElementById('display');
+
+    // remove all leading 0s unless "." found after 0s
+    if (display.value.length >= 1){
+        display.value = display.value.replace(/^0+(?![.\/()+%^X-])/g, '');
+    }
 
     // Replace -digit as -1 * digit, otherwise some ^ operation fails
     display.value = display.value.replace(/(-)(\d+(\.\d+)?)/g, '-1*$2');
@@ -59,13 +70,14 @@ function calculate() {
     // Replace X with *
     display.value = display.value.replace(/\X/g, '*');
 
-    // Replace empty dot with 0
+    // Replace empty dot with .0
     display.value = display.value.replace(/\.(?!\d)/g, ".0");
 
     try {
         display.value = eval(display.value);
+        if (display.value === "0") zeroResultFound = true;
     } catch (error) {
         display.value = error.toString();
-        calculationDone = true;
+        errorFound = true;
     }
 }
