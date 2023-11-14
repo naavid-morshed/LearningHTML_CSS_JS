@@ -48,7 +48,7 @@ function calculate() {
     const display = document.getElementById('display');
 
     // remove all leading 0s unless "./+-%^X()" found after 0s
-    if (display.value.length >= 1){
+    if (display.value.length > 1){
         display.value = display.value.replace(/^0+(?![.\/()+%^X-])/g, '');
     }
 
