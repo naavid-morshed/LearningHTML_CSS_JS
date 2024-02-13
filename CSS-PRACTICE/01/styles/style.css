@@ -1,0 +1,36 @@
+/** {*/
+/*    font-family: monospace;*/
+/*}*/
+
+p, h1 {
+    color: purple;
+}
+
+html {
+    font-size: 24px;
+}
+
+body {
+    background: black;
+}
+
+main{
+
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+.button-style {
+    border: solid ButtonBorder;
+}
+
+.second-paragraph {
+    color: blanchedalmond;
+}
+
+.make-upper-and-brown {
+    text-transform: uppercase;
+    color: brown;
+}

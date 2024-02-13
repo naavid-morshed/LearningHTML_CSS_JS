@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background: papayawhip;
+    color: darkblue;
+    min-height: 100vh;
+}
+
+.container {
+    color: rgba(0, 0, 255, 0.71);
+    font-size: 1.5rem;
+    border: 10px purple double;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    outline: 2px solid black;
+    /*outline-offset: 4px;*/
+}
+
+.circle {
+    background-color: gold;
+
+    height: 100px;
+    width: 100px;
+
+    border: 2px solid black;
+    margin: 1.5rem auto;
+
+    outline: 2px solid red;
+    outline-offset: -4px;
+}
