@@ -14,33 +14,83 @@
     <form name="bmi_form">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 pe-0">
+
                 <div class="row mb-2">
                     <div class="col-2 pt-2">Name:</div>
-                    <div class="col-10"><input class="form-control" name="bmi_name" placeholder="name" type="text">
+                    <div class="col-10">
+                        <input
+                                class="form-control"
+                                name="bmi_name"
+                                placeholder="name"
+                                type="text"
+                        >
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-2 pt-2">Age:</div>
-                    <div class="col-10"><input class="form-control" min="1" name="bmi_age" placeholder="age" type="number"></div>
+                    <div class="col-10">
+                        <input
+                                class="form-control"
+                                min="1"
+                                name="bmi_age"
+                                placeholder="age"
+                                type="number"
+                        >
+                    </div>
                 </div>
+
             </div>
+
             <div class="col-lg-6 col-md-6 col-sm-12 ps-1">
+
                 <div class="row mb-2">
                     <div class="col-2 pt-2">Height:</div>
-                    <div class="col-10"><input class="form-control" min="0" name="bmi_height" placeholder="height" step=".01" type="number"></div>
+                    <div class="col-10">
+                        <input
+                                class="form-control"
+                                min="0"
+                                name="bmi_height"
+                                placeholder="height"
+                                step=".01"
+                                type="number"
+                        >
+                    </div>
                 </div>
+
                 <div class="row">
                     <div class="col-2 pt-2">Weight:</div>
-                    <div class="col-10"><input class="form-control" min="0" name="bmi_weight" placeholder="weight" step=".01" type="number"></div>
+                    <div class="col-10">
+                        <input
+                                class="form-control"
+                                min="0"
+                                name="bmi_weight"
+                                placeholder="weight"
+                                step=".01"
+                                type="number"
+                        >
+                    </div>
                 </div>
+
             </div>
         </div>
     </form>
 
     <div class="row my-3">
         <div class="col-6">
-            <input type="radio" name="toggle" id="bmi_mode" checked> <label for="bmi_mode"> BMI Mode</label>
-            <input class="ms-1" type="radio" name="toggle" id="calc_mode"> <label for="calc_mode"> Calculator Mode</label>
+            <input
+                    type="radio"
+                    name="toggle"
+                    checked
+                    id="bmi_mode"
+            ><label for="bmi_mode"> BMI Mode</label>
+
+            <input
+                    class="ms-1"
+                    type="radio"
+                    name="toggle"
+                    id="calc_mode"
+            ><label for="calc_mode">Calculator Mode</label>
         </div>
         <div class="col-6">
             <div class="float-end">
@@ -68,8 +118,10 @@
     <div class="d-flex justify-content-center align-items-center">
         <form style="display:none;" id="radio_calc">
             <div class="mb-1">
-                <input style="width: 174px" class="form-control text-end" type="text" name="display" id="display"
-                       placeholder="CASEO 420" readonly>
+                <input
+                        style="width: 174px" class="form-control text-end" type="text" name="display" id="display"
+                        placeholder="CASEO 420" readonly
+                >
             </div>
             <div class="mb-1">
                 <input style="width: 40px" type="button" value="C" onclick="clearDisplay()">

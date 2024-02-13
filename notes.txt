@@ -111,8 +111,52 @@ CSS:
         6. li {
             float: left; [float lef makes list items horizontal, has to be used with overflow hidden inside ol/ul]
            } [bad practice most likely, avoid using this. check navigation_menu_using_list.css]
+        7. rgba (0, 0, 0, .5) [a stands for alpha channel, determines opacity. ".5" means 50% opacity]
+        8. border: 2px black solid;
+           [size, color, border-type]
+        9. em means equal to current element's font size in pixel.
+                   p {
+                        font: 2rem,
+                        border: 2em [2 times 2rem]
+                   }
+       10. width: 40ch [forty characters per length]
+       11. wildcard "*" to reset CSS properties
+           * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box; [choose border box to make content size sum of box size, padding, border]
+                                       [using content-box will make sure box size is of content height and width
+                                        without taking padding, border, margin into account]
+           }
+       12. vw -> viewport width
+           body {
+                width: 100vw [do not use this, this will add horizontal scroll bar,
+                              use 100% instead]
+           }
 
-    notes:
+       13. margin: 1.5rem 2rem 0; [read notes:point 8 to read about margin collapse]
+           [top, left & right, bottom]
+
+           margin: 1rem 2rem 3rem 4rem;
+           [top, right, bottom, left]
+
+           margin: 1.5rem 2rem;
+           [top & bottom, left & right]
+
+           margin: 1.5rem auto;
+           [will set auto for left and right resulting in centered content
+            does not work for top and right]
+
+       14. outline: 5px solid purple;
+           [works right around border, it does not take any space]
+
+       15. outline-offset: 4px; [can use negative value to push outline inside margin as well]
+           [pushes outline away from margin]
+
+
+    notes: [CSS works top down, the latter selectors and classes will override the previous ones]
+           [DO NOT set absolute font size, it takes away user's choice of setting their
+            preferred font size in browser.]
         1. External CSS must not contain any html code [use link tag in html file to point to css file]
         2. Example of internal CSS, looks ugly
                 <html>
@@ -140,7 +184,28 @@ CSS:
         4. all style attributes (which are also inline CSS) can be written in external CSS file 
            to reduce clutter in HTML page
         5. inline CSS overwrites both internal and external CSS [are there exceptions?]
-        6. 
+        6. form element does not inherit font settings (button, input, textarea, select) unless
+           specifically defined like this:
+
+           body {
+               font-size: 24px;
+               background: black;
+           }
+
+           button, input, textarea, select {
+               font: inherit;
+           }
+        7. Default font size is 16px or 1rem.
+           1rem is 1 times root element's font size in pixel.
+        8. Margins aren't about sizing the element; they're only about breathing room.
+           (You may notice that even box-sizing won't let you consider the margin as part of the
+           element's size. Because it's not.)
+
+           A margin of 1em means "I need at least 1em of space around myself to not look crowded."
+           If you have two elements next to each other that both say they want at least 1em of
+           space, then spacing them 1em apart satisfies both conditions while wasting the minimum
+           amount of space. The rules for collapsing margins make a lot more sense if you keep this in mind.
+
 
 JS: [use "<br>" inside function for line break]
     [js changes value on reassigning of another value, same goes for methods. need to be careful about this]
