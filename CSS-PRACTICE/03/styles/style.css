@@ -26,10 +26,11 @@ html {
 .circle {
     background-color: gold;
 
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
 
     border: 2px solid black;
+    border-radius: 100px;
     margin: 1.5rem auto;
 
     outline: 2px solid red;

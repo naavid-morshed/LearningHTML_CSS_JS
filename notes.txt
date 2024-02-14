@@ -153,6 +153,24 @@ CSS:
        15. outline-offset: 4px; [can use negative value to push outline inside margin as well]
            [pushes outline away from margin]
 
+       16. text-align: justify; [makes text uniform on both sides]
+       17. text-indent: 2em; [indents first line by 2em]
+       18. letter-spacing: .1em; [creates spaces between letters]
+       19. word-spacing: .5em [creates spaces between words]
+       20. font-weight: ; [self-explanatory]
+       21. font-style: italic;
+       22. a{} then VHA, a:visited{}, a:hover{}, a:active{} [a:focus is typically used with hover]
+       23. <ol start="5" reversed> [list starts from 5, 4, 3, 2, 1, 0 then goes negative]
+               <li>first</li>
+               <li>second</li>
+               <li>third</li>
+               <li>fourth</li>
+               <li>fifth</li>
+           </ol>
+       24. ul {
+               list-style: inside square url("../Eo_circle_green_checkmark.svg.png");
+           } [square is fallback in case image may not load]
+
 
     notes: [CSS works top down, the latter selectors and classes will override the previous ones]
            [DO NOT set absolute font size, it takes away user's choice of setting their
@@ -184,7 +202,8 @@ CSS:
         4. all style attributes (which are also inline CSS) can be written in external CSS file 
            to reduce clutter in HTML page
         5. inline CSS overwrites both internal and external CSS [are there exceptions?]
-        6. form element does not inherit font settings (button, input, textarea, select) unless
+        6. form element does not inherit font settings like
+           (button, input, textarea, select) unless
            specifically defined like this:
 
            body {
