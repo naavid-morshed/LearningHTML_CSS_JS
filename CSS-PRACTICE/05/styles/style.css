@@ -26,7 +26,18 @@ ol {
     padding: 2% 0;
 }
 
-ul {
-    list-style: square inside;
+ul li {
+    list-style-position: inside;
 }
+
+ul li:nth-child(even)::marker {
+    list-style-type: square;
+    content: "**";
+}
+
+ul li:nth-of-type(odd)::marker {
+    content: "*";
+}
+
+
 

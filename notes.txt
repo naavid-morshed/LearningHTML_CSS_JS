@@ -99,7 +99,7 @@ CSS:
 
         4. a:active {
             color: aqua;
-           } [clicking on link will momemtarily turn its color to aqua] [multiple css properties can be combined,
+           } [clicking on link will momentarily turn its color to aqua] [multiple css properties can be combined,
                                                                             eg. a:link, a:visited {}]
         5. p {
             background-image: url('url here'); [both single and double quote works]
@@ -170,6 +170,7 @@ CSS:
        24. ul {
                list-style: inside square url("../Eo_circle_green_checkmark.svg.png");
            } [square is fallback in case image may not load]
+       25.
 
 
     notes: [CSS works top down, the latter selectors and classes will override the previous ones]
