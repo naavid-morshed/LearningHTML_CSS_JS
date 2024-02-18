@@ -28,15 +28,16 @@ ol {
 
 ul li {
     list-style-position: inside;
+    color: purple;
 }
 
 ul li:nth-child(even)::marker {
-    list-style-type: square;
     content: "**";
 }
 
 ul li:nth-of-type(odd)::marker {
-    content: "*";
+    content: "* ";
+    color: aqua;
 }
 
 

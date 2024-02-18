@@ -170,7 +170,13 @@ CSS:
        24. ul {
                list-style: inside square url("../Eo_circle_green_checkmark.svg.png");
            } [square is fallback in case image may not load]
-       25.
+       25. ul li:nth-of-type(odd)::marker {
+               content: "*";
+               color: aqua;
+           } [::marker is a pseudo-element keyword which is added to a selector, ::marker works on list content]
+       26. display: inline-block; [makes the selector much more customizable
+                                   making sure it can affect parent elements as well]
+       27.
 
 
     notes: [CSS works top down, the latter selectors and classes will override the previous ones]
@@ -217,7 +223,7 @@ CSS:
            }
         7. Default font size is 16px or 1rem.
            1rem is 1 times root element's font size in pixel.
-        8. Margins aren't about sizing the element; they're only about breathing room.
+        8. Margins aren't about sizing the element; they're only for breathing room.
            (You may notice that even box-sizing won't let you consider the margin as part of the
            element's size. Because it's not.)
 
@@ -225,7 +231,8 @@ CSS:
            If you have two elements next to each other that both say they want at least 1em of
            space, then spacing them 1em apart satisfies both conditions while wasting the minimum
            amount of space. The rules for collapsing margins make a lot more sense if you keep this in mind.
-
+        9. Block level elements stack on top of each other and creates new line, they take full width and height
+           unless limited by parent. inline element only takes the width of the content unless added padding.
 
 JS: [use "<br>" inside function for line break]
     [js changes value on reassigning of another value, same goes for methods. need to be careful about this]
